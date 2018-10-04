@@ -22,6 +22,10 @@ module FinancialMath
       end
     end
 
+    def infinite_decreasing_sum
+      initial_value / (1 - ratio)
+    end
+
     private
 
     def growing_progression
