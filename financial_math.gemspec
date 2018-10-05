@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["daniel.omar.vergara@gmail.com"]
 
   spec.summary       = %q{Financial equations}
-  spec.description   = %q{A set of financial functions}
+  spec.description   = %q{Set of financial functions}
   spec.homepage      = "https://github.com/dany2691/financial_math"
   spec.license       = "MIT"
 
