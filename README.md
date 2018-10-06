@@ -53,6 +53,8 @@ This command will get the development dependencies installed too.
 
 ## Release History
 
+* 0.4.0
+    * ADD: Add `CompoundInterest` class
 * 0.3.1
     * CHANGE: Update docs (module code remains unchanged)
 * 0.3.0
