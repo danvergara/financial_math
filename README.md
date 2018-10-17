@@ -69,7 +69,8 @@ $ gem install financial_math --dev
 This command will get the development dependencies installed too.
 
 ## Release History
-
+* 0.5.0
+    * ADD: Add `average_growth_rate` and `continous_future_value` public methods to `CompoundInterest` class
 * 0.4.1
     * CHANGE: Update docs (module code remains unchanged)
 * 0.4.0
