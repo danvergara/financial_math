@@ -8,6 +8,16 @@ module FinancialMath
       @interest_rate = args.fetch(:interest_rate, 0.0)
       @nominal_rate = args.fetch(:nominal_rate, 0.0)
       @effective_rate = args.fetch(:effective_rate, 0.0)
+      @future_value = args.fetch(:future_value, 0.0)
+    end
+
+    def average_growth_rate
+      ((@future_value / @present_value)**(1.0 / @periods) - 1).round(4)
+    end
+
+    def continous_future_value
+      @future_value = @present_value * Math.exp(@interest_rate * @periods)
+      @future_value.round(2)
     end
 
     def effective_rate

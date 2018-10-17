@@ -32,9 +32,21 @@ RSpec.describe FinancialMath::CompoundInterest do
     expect(compound_interest.effective_rate).to eql(0.2377)
   end
 
-  it ' is th correct value of the nominal rate equation' do
+  it 'is th correct value of the nominal rate equation' do
     args = { effective_rate: 0.2, frequency: 4 }
     compound_interest = FinancialMath::CompoundInterest.new(args)
     expect(compound_interest.nominal_rate).to eql(0.1865)
+  end
+
+  it 'is the correct value of the average_growth_rate' do
+    args = { present_value: 103.25, future_value: 231.89, periods: 3 }
+    compound_interest = FinancialMath::CompoundInterest.new(args)
+    expect(compound_interest.average_growth_rate).to eql 0.3096
+  end
+
+  it 'is the correct value of the continous_future_value' do
+    args = { present_value: 15, interest_rate: 0.02, periods: 365 }
+    compound_interest = FinancialMath::CompoundInterest.new(args)
+    expect(compound_interest.continous_future_value).to eql 22_204.50
   end
 end
