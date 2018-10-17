@@ -24,6 +24,22 @@ Or install it yourself as:
 
     $ gem install financial_math
 
+  ## Content
+
+  This cover the next topics in financial math:
+
+  * Geometric Progression
+  * Arithemetic Progression
+  * Simple Interest
+  * Compound Interest
+
+More content will be added, soon, like:
+
+* Annuities
+* Valuation
+* Amortization
+* Stock market math
+
 ## Usage
 
 To calculate the last item of a geometric progression:
@@ -31,7 +47,7 @@ To calculate the last item of a geometric progression:
 ```ruby
 args = { initial_value: 1100, ratio: 1.1, times: 5 }
 geometric_progression = FinancialMath::GeometricProgression.new(args)
-expect(geometric_progression.last_item).to eql(1610.51)
+geometric_progression.last_item
 ```
 
 To calculate the future value:
@@ -41,6 +57,7 @@ args = { present_value: 100_000.0, interest_rate: 0.05, periods: 3 }
 simple_interest = FinancialMath::SimpleInterest.new(args)
 simple_interest.future_value
 ```
+
 ## Development
 
 If want test this gem without clone this repo, type:
@@ -53,6 +70,8 @@ This command will get the development dependencies installed too.
 
 ## Release History
 
+* 0.4.1
+    * CHANGE: Update docs (module code remains unchanged)
 * 0.4.0
     * ADD: Add `CompoundInterest` class
 * 0.3.1
