@@ -57,6 +57,13 @@ args = { present_value: 100_000.0, interest_rate: 0.05, periods: 3 }
 simple_interest = FinancialMath::SimpleInterest.new(args)
 simple_interest.future_value
 ```
+The interest rate must be in terms of years, if your problem is expressed in terms of days or months, provide the frequency of conversion and the periods in terms of days.
+
+```ruby
+args = { present_value: 1500.0, interest_rate: 0.45, periods: 73, frequency: 360 }
+simple_interest = FinancialMath::SimpleInterest.new(args)
+simple_interest.future_value
+```
 
 ## Development
 
@@ -69,6 +76,10 @@ $ gem install financial_math --dev
 This command will get the development dependencies installed too.
 
 ## Release History
+
+* 0.6.0
+    * ADD: Add `@frequency` to `SimpleInterest` class
+    * CHANGE: Change the `periods_in_days` mehtod to `factor` in `SimpleInterest`
 * 0.5.0
     * ADD: Add `average_growth_rate` and `continous_future_value` public methods to `CompoundInterest` class
 * 0.4.1
