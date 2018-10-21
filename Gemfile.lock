@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    financial_math (0.5.0)
+    financial_math (0.6.0)
 
 GEM
   remote: https://rubygems.org/
