@@ -77,6 +77,10 @@ This command will get the development dependencies installed too.
 
 ## Release History
 
+
+* 0.7.0
+    * ADD: Add `present_value`, `continous_present_value` to `CompoundInterest` as public methods
+    * ADD: Add `internal_rate_of_return`, `real_rate_of_return` and `a_good_investment?` to `CompoundInterest` as public methods
 * 0.6.0
     * ADD: Add `@frequency` to `SimpleInterest` class
     * CHANGE: Change the `periods_in_days` mehtod to `factor` in `SimpleInterest`

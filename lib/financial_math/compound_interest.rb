@@ -9,6 +9,11 @@ module FinancialMath
       @nominal_rate = args.fetch(:nominal_rate, 0.0)
       @effective_rate = args.fetch(:effective_rate, 0.0)
       @future_value = args.fetch(:future_value, 0.0)
+      @inflation_rate = args.fetch(:inflation_rate, 0.0)
+    end
+
+    def a_good_investment?
+      real_rate_of_return > 0
     end
 
     def average_growth_rate
@@ -18,6 +23,11 @@ module FinancialMath
     def continous_future_value
       @future_value = @present_value * Math.exp(@interest_rate * @periods)
       @future_value.round(2)
+    end
+
+    def continous_present_value
+      @present_value = @future_value / Math.exp(@interest_rate * @periods)
+      @present_value.round(2)
     end
 
     def effective_rate
@@ -33,9 +43,21 @@ module FinancialMath
       @present_value * (factor - 1)
     end
 
+    def internal_rate_of_return
+      ((@future_value / @present_value)**(1.0 / @periods) - 1).round(4)
+    end
+
+    def present_value
+      (@future_value / factor).round(2)
+    end
+
     def nominal_rate
       @nominal_rate = ((1 + @effective_rate)**nth_rooth - 1) * @frequency
       @nominal_rate.round(4)
+    end
+
+    def real_rate_of_return
+      ((@interest_rate - @inflation_rate) / (1 + @inflation_rate)).round 4
     end
 
     private
