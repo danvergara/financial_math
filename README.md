@@ -90,7 +90,8 @@ This command will get the development dependencies installed too.
 
 ## Release History
 
-
+* 1.0.1
+    * FIX: Fix bad release
 * 1.0.0
     * CHANGE: Remove `SimpleInterest()`
     * CHANGE: Remove `CompoundInterest()`
