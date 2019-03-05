@@ -45,25 +45,38 @@ More content will be added, soon, like:
 To calculate the last item of a geometric progression:
 
 ```ruby
-args = { initial_value: 1100, ratio: 1.1, times: 5 }
-geometric_progression = FinancialMath::GeometricProgression.new(args)
-geometric_progression.last_item
+progression = FinancialMath::GeometricProgression.new(initial_value: 1100, ratio: 1.1, times: 5)
+progression.last_item
 ```
 
 To calculate the future value:
 
 ```ruby
-args = { present_value: 100_000.0, interest_rate: 0.05, periods: 3 }
-simple_interest = FinancialMath::SimpleInterest.new(args)
-simple_interest.future_value
+class Accountant
+  include FinancialMath::SimpleInterest
+end
+
+accountant = Accountant.new
+accountant.future_value(present_value: 100_000.0, interest_rate: 0.05, periods: 3)
 ```
 The interest rate must be in terms of years, if your problem is expressed in terms of days or months, provide the frequency of conversion and the periods in terms of days.
 
 ```ruby
-args = { present_value: 1500.0, interest_rate: 0.45, periods: 73, frequency: 360 }
-simple_interest = FinancialMath::SimpleInterest.new(args)
-simple_interest.future_value
+class Accountant
+  include FinancialMath::SimpleInterest
+end
+
+accountant = Accountant.new
+accountant.future_value(present_value: 1500.0, interest_rate: 0.45, periods: 3, frequency: 360)
 ```
+
+## Available simple interest formulas
+
+![](simple_interest.png)
+
+## Available compound interest formulas
+
+![](compound_interest.png)
 
 ## Development
 
@@ -78,6 +91,9 @@ This command will get the development dependencies installed too.
 ## Release History
 
 
+* 1.0.0
+    * CHANGE: Remove `SimpleInterest()`
+    * CHANGE: Remove `CompoundInterest()`
 * 0.7.0
     * ADD: Add `present_value`, `continous_present_value` to `CompoundInterest` as public methods
     * ADD: Add `internal_rate_of_return`, `real_rate_of_return` and `a_good_investment?` to `CompoundInterest` as public methods
@@ -95,7 +111,7 @@ This command will get the development dependencies installed too.
 * 0.3.0
     * ADD: Add `SimpleInterest` class
 * 0.3.0
-    * ADD: Add `GEometricProgression` class  
+    * ADD: Add `GEometricProgression` class
 * 0.2.0
     * ADD: Add `ArithemeticProgression` class
 * 0.1.0
