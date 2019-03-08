@@ -91,6 +91,8 @@ $ gem install financial_math --dev
 This command will get the development dependencies installed too.
 
 ## Release History
+* 1.0.3
+  * FIX: Fix bad release
 * 1.0.2
     * ADD: Add version badge and fix some typos in README
 * 1.0.1
