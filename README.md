@@ -1,10 +1,12 @@
-# FinancialMath
+# Financial Math
 > A set of financial equations.
+
+[![Gem Version](https://badge.fury.io/rb/financial_math.svg)](https://badge.fury.io/rb/financial_math)
 
 This library provides a set of financial equations.
 This library is based on the book titled:
 
-## Matemáticasfi nancieras
+## Matemáticas financieras
 El valor del dinero en el tiempo
 
 by *Zbigniew Kozikowski Zarska*
@@ -89,12 +91,15 @@ $ gem install financial_math --dev
 This command will get the development dependencies installed too.
 
 ## Release History
-
+* 1.0.2
+    * ADD: Add version badge and fix some typos in README
 * 1.0.1
     * FIX: Fix bad release
 * 1.0.0
     * CHANGE: Remove `SimpleInterest()`
     * CHANGE: Remove `CompoundInterest()`
+    * ADD: Add `CompoundInterest` sub-modules
+    * ADD: Add `SimpleInterest` sub-modules
 * 0.7.0
     * ADD: Add `present_value`, `continous_present_value` to `CompoundInterest` as public methods
     * ADD: Add `internal_rate_of_return`, `real_rate_of_return` and `a_good_investment?` to `CompoundInterest` as public methods
